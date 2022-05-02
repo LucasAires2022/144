@@ -1,0 +1,64 @@
+Options FollowSymLinks 
+RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} ^adciudad.com.ar
+#RewriteRule ^ https://www.adciudad.com.ar%{REQUEST_URI} [L,R=301]
+RewriteCond  %{SERVER_PORT} 80
+RewriteRule ^ localhost%{REQUEST_URI} [L,R=301]
+
+#RewriteBase /
+
+RewriteRule ^login$ /casos/login.php [L]
+RewriteRule ^login/salir$ /casos/login.php?salir [L]
+RewriteRule ^buscador$ /casos/buscador.php [L]
+RewriteRule ^abm/usuarios$ /casos/abm/usuarios.php [L]
+RewriteRule ^abm/usuarios-([^-]*)$ /casos/abm/usuarios.php?ordenar=$1 [L]
+
+RewriteRule ^abm/residencia$ /casos/abm/residencia.php [L]
+RewriteRule ^abm/residencia-([^-]*)$ /casos/abm/residencia.php?ordenar=$1 [L]
+
+RewriteRule ^abm/vinculo-consultante$ /casos/abm/vinculo_consultante.php [L]
+RewriteRule ^abm/vinculo-consultante-([^-]*)$ /casos/abm/vinculo_consultante.php?ordenar=$1 [L]
+RewriteRule ^abm/vinculo-agresor$ /casos/abm/vinculo_agresor.php [L]
+RewriteRule ^abm/vinculo-agresor-([^-]*)$ /casos/abm/vinculo_agresor.php?ordenar=$1 [L]
+RewriteRule ^abm/tipo-violencia$ /casos/abm/tipo_violencia.php [L]
+RewriteRule ^abm/tipo-violencia-([^-]*)$ /casos/abm/tipo_violencia.php?ordenar=$1 [L]
+RewriteRule ^abm/tipo-maltrato$ /casos/abm/tipo_maltrato.php [L]
+RewriteRule ^abm/tipo-maltrato-([^-]*)$ /casos/abm/tipo_maltrato.php?ordenar=$1 [L]
+RewriteRule ^abm/tenencia-vivienda$ /casos/abm/tenencia_vivienda.php [L]
+RewriteRule ^abm/tenencia-vivienda-([^-]*)$ /casos/abm/tenencia_vivienda.php?ordenar=$1 [L]
+RewriteRule ^abm/situacion-conyugal$ /casos/abm/situacion_conyugal.php [L]
+RewriteRule ^abm/situacion-conyugal-([^-]*)$ /casos/abm/situacion_conyugal.php?ordenar=$1 [L]
+RewriteRule ^abm/requerimiento$ /casos/abm/requerimiento.php [L]
+RewriteRule ^abm/requerimiento-([^-]*)$ /casos/abm/requerimiento.php?ordenar=$1 [L]
+RewriteRule ^abm/origen-llamado$ /casos/abm/origen_llamado.php [L]
+RewriteRule ^abm/origen-llamado-([^-]*)$ /casos/abm/origen_llamado.php?ordenar=$1 [L]
+RewriteRule ^abm/nacionalidad$ /casos/abm/nacionalidad.php [L]
+RewriteRule ^abm/nacionalidad-([^-]*)$ /casos/abm/nacionalidad.php?ordenar=$1 [L]
+RewriteRule ^abm/motivo-problematica$ /casos/abm/motivo_problematica.php [L]
+RewriteRule ^abm/motivo-problematica-([^-]*)$ /casos/abm/motivo_problematica.php?ordenar=$1 [L]
+RewriteRule ^abm/motivo-varios$ /casos/abm/motivo_varios.php [L]
+RewriteRule ^abm/motivo-varios-([^-]*)$ /casos/abm/motivo_varios.php?ordenar=$1 [L]
+RewriteRule ^abm/medidas-proteccion$ /casos/abm/medidas_proteccion.php [L]
+RewriteRule ^abm/medidas-proteccion-([^-]*)$ /casos/abm/medidas_proteccion.php?ordenar=$1 [L]
+RewriteRule ^abm/modalidad-violencia$ /casos/abm/modalidad_violencia.php [L]
+RewriteRule ^abm/modalidad-violencia-([^-]*)$ /casos/abm/modalidad_violencia.php?ordenar=$1 [L]
+RewriteRule ^abm/identidad-genero$ /casos/abm/identidad_genero.php [L]
+RewriteRule ^abm/identidad-genero-([^-]*)$ /casos/abm/identidad_genero.php?ordenar=$1 [L]
+RewriteRule ^abm/derivacion-violencia-genero$ /casos/abm/derivacion_violencia.php [L]
+RewriteRule ^abm/derivacion-violencia-genero-([^-]*)$ /casos/abm/derivacion_violencia.php?ordenar=$1 [L]
+RewriteRule ^abm/derivacion-otras-problematicas-mujer$ /casos/abm/derivacion_problematicas.php [L]
+RewriteRule ^abm/derivacion-otras-problematicas-mujer-([^-]*)$ /casos/abm/derivacion_problematicas.php?ordenar=$1 [L]
+RewriteRule ^abm/derivacion-maltrato$ /casos/abm/derivacion_maltrato.php [L]
+RewriteRule ^abm/derivacion-maltrato-([^-]*)$ /casos/abm/derivacion_maltrato.php?ordenar=$1 [L]
+RewriteRule ^abm/actividad$ /casos/abm/actividad.php [L]
+RewriteRule ^abm/actividad-([^-]*)$ /casos/abm/actividad.php?ordenar=$1 [L]
+
+RewriteRule ^nuevo-caso$ /casos/nuevo-caso.php [L]
+RewriteRule ^nuevo-caso/descartado$ /casos/nuevo-caso.php?d=s [L]
+RewriteRule ^nuevo-caso/guardado$ /casos/nuevo-caso.php?g=s [L]
+RewriteRule ^caso-([^-]*)$ /casos/caso.php?id=$1 [L]
+RewriteRule ^modificar-caso-([^-]*)$ /casos/modificar-caso.php?id=$1 [L]
+
+#ErrorDocument 404 /index.php
+
